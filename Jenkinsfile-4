@@ -4,7 +4,7 @@ def imageTag = "ugurkocak1980/docker.repo2023" + timeInMillis
 pipeline {
   agent any
   environment {
-    DH_CREDS=credentials('dh-creds')
+    UK_CREDS=credentials('uk-creds')
   }
   stages {
     stage('Hello') {
@@ -13,7 +13,7 @@ pipeline {
           docker logout
           echo "FROM alpine:latest" > Dockerfile
           docker build -t ${imageTag} . 
-          echo $DH_CREDS_PSW | docker login --username=$DH_CREDS_USR --password-stdin
+          echo $DH_CREDS_PSW | docker login --username=$UK_CREDS_USR --password-stdin
           docker tag ${imageTag} ${imageTag}
         """
         script {
