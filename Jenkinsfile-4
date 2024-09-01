@@ -10,7 +10,6 @@ pipeline {
     stage('Hello') {
       steps {
         sh """
-          docker logout
           echo "FROM alpine:latest" > Dockerfile
           docker build -t ${imageTag} . 
           echo $UK_CREDS_PSW | docker login --username=$UK_CREDS_USR --password-stdin
