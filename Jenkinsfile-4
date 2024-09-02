@@ -3,7 +3,7 @@ def imageTag = "ugurkocak1980/alpine" + timeInMillis
 @Library("shared-library") _
 pipeline {
   agent {
-    docker
+    label 'docker'
   }
   environment {
     UK_CREDS=credentials('uk-creds')
