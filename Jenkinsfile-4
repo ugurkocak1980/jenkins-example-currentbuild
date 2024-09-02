@@ -1,5 +1,5 @@
 def timeInMillis = currentBuild.timeInMillis
-def imageTag = "ugurkocak1980/docker.repo2023" + timeInMillis
+def imageTag = "ugurkocak1980/alpine" + timeInMillis
 @Library("shared-library") _
 pipeline {
   agent any
