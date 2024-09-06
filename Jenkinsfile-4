@@ -2,7 +2,7 @@ def timeInMillis = currentBuild.timeInMillis
 def imageTag = "ugurkocak1980/alpine" + timeInMillis
 @Library("shared-library") _
 pipeline {
-  agent any
+  agent {docker }
   environment {
     UK_CREDS=credentials('uk-creds')
   }
